@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Bisiesto</title>
+
+    <!-- 
+        Nombre: Verificador de Año Bisiesto
+        Entradas:
+            - Año (Número ingresado por el usuario)
+        Salidas:
+            - Mensaje indicando si el año es bisiesto o no
+        Proceso:
+            - Se obtiene el año ingresado.
+            - Se verifica si cumple las condiciones para ser bisiesto:
+                * Divisible por 4 y no por 100
+                * O divisible por 400
+            - Se muestra el resultado en pantalla.
+    -->
+</head>
+<body>
+    <!-- Sección principal de la aplicación -->
+    <div class="verificarYear">
+        <h2>Verificar año bisiesto</h2>
+        <input type="number" id="num1" placeholder="Ingrese un año">
+        <button onclick="verificarYear()">Verificar</button>
+        <p id="response"></p>
+    </div>
+
+    <!-- Lógica del programa -->
+    <script>
+        // Función para verificar si el año es bisiesto
+        function verificarYear() {
+            let num = parseFloat(document.getElementById("num1").value);
+
+            // Comprobación de año bisiesto
+            if ((num % 4 === 0 && num % 100 !== 0) || (num % 400 === 0)) {
+                document.getElementById("response").innerText="El año es bisiesto";
+            } else {
+                document.getElementById("response").innerText="El año no es bisiesto";
+            }
+        }
+    </script>
+</body>
+</html>
